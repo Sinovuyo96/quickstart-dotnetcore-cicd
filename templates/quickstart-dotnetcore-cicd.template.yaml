@@ -86,7 +86,7 @@ Resources:
           Status: ENABLED
         S3Logs:
           Status: DISABLED
-  CodePipelineArtifactStoreBucket:
+  DotnetBucket:
     Type: 'AWS::S3::Bucket'
   AppPipeline:
     Type: 'AWS::CodePipeline::Pipeline'
@@ -98,7 +98,7 @@ Resources:
         - Arn
       ArtifactStore:
         Type: S3
-        Location: !Ref CodePipelineArtifactStoreBucket
+        Location: !Ref DotnetBucket
       Stages:
         - Name: Source
           Actions:
